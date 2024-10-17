@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwf8g1x31en3s"]
+
+[ext_resource type="Script" path="res://src/world/entities/candle/candle.gd" id="1_eyo4j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ej6r"]
+size = Vector2(10, 20)
+
+[node name="Candle" type="CharacterBody2D"]
+script = ExtResource("1_eyo4j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5ej6r")
+debug_color = Color(1, 0.871682, 0.662357, 0.42)

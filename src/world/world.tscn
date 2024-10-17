@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=6 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="PackedScene" uid="uid://c2w7uxj357dmw" path="res://src/world/entities/player/Player.tscn" id="2_3wrrf"]
 [ext_resource type="PackedScene" uid="uid://dvbpgmnvrhcfm" path="res://src/world/lader.tscn" id="3_3ei0p"]
+[ext_resource type="PackedScene" uid="uid://cwf8g1x31en3s" path="res://src/world/entities/candle/candle.tscn" id="4_452w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icmvr"]
 size = Vector2(1386, 20)
@@ -17,8 +18,11 @@ position = Vector2(688, 691)
 shape = SubResource("RectangleShape2D_icmvr")
 
 [node name="Player" parent="StaticBody2D" instance=ExtResource("2_3wrrf")]
-position = Vector2(579, 659)
+position = Vector2(556, 660)
 
 [node name="Lader" parent="." instance=ExtResource("3_3ei0p")]
 position = Vector2(595, 610)
 height = 7
+
+[node name="Candle" parent="." instance=ExtResource("4_452w2")]
+position = Vector2(599, 479)
