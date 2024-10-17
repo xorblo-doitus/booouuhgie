@@ -30,3 +30,6 @@ height = 7
 
 [node name="Candle" parent="." instance=ExtResource("4_452w2")]
 position = Vector2(599, 479)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.210593, 0.135037, 3.60981e-08, 1)
