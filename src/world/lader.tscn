@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvbpgmnvrhcfm"]
+
+[ext_resource type="Script" path="res://src/world/lader.gd" id="1_cjgjd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pok6"]
+resource_local_to_scene = true
+
+[node name="Lader" type="Area2D"]
+gravity_space_override = 3
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 0.0
+linear_damp_space_override = 3
+linear_damp = 1e+16
+script = ExtResource("1_cjgjd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2pok6")
+debug_color = Color(0.718008, 0.481119, 5.77569e-07, 0.42)
