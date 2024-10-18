@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqlwbg7v4d1cb"]
+[gd_scene load_steps=6 format=3 uid="uid://dqlwbg7v4d1cb"]
 
 [ext_resource type="Script" path="res://src/world/entities/ghost/ghost.gd" id="1_2bemp"]
 [ext_resource type="Shader" path="res://src/world/entities/ghost/ghost.gdshader" id="2_qbkym"]
@@ -8,6 +8,9 @@ shader = ExtResource("2_qbkym")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_on067"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_f0yrr"]
+radius = 1.0
+
 [node name="Ghost" type="CharacterBody2D"]
 script = ExtResource("1_2bemp")
 
@@ -15,3 +18,10 @@ script = ExtResource("1_2bemp")
 material = SubResource("ShaderMaterial_hq8np")
 shape = SubResource("RectangleShape2D_on067")
 debug_color = Color(0.52, 0.52, 0.52, 0.419608)
+
+[node name="LightDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightDetector"]
+shape = SubResource("CircleShape2D_f0yrr")
