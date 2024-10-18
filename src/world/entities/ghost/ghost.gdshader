@@ -24,6 +24,7 @@ void light() {
 	//LIGHT.a = LIGHT_COLOR.a;
 	//if (false) {
 	if (LIGHT_COLOR.r > 0.3 + wave_offset) {
+		//COLOR = vec4(1.0);
 		LIGHT = vec4(1.0, 1.0, 1.0, 0.5);
 	} else if (LIGHT_COLOR.r > 0.1 + wave_offset) {
 		//LIGHT.r = LIGHT_COLOR.r;
