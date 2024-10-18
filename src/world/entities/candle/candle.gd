@@ -9,7 +9,7 @@ func push(x: float, delta: float) -> void:
 	velocity.x = x
 	velocity.y = 0
 	
-	if test_move(transform, Vector2(velocity.x * delta + 1, 0), test_push_collision, -0.5):
+	if test_move(transform, Vector2(velocity.x * delta + 2, 0), test_push_collision, -0.5):
 		if test_push_collision.get_collider().has_method(&"push"):
 			test_push_collision.get_collider().push(velocity.x, delta)
 	
