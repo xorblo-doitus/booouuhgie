@@ -36,7 +36,7 @@ position = Vector2(570, 990)
 color = Color(0.210593, 0.135037, 3.60981e-08, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_3wrrf")]
-position = Vector2(1140, 840)
+position = Vector2(1290, 630)
 
 [node name="Ghost" parent="." instance=ExtResource("3_7gepy")]
 position = Vector2(510, 870)

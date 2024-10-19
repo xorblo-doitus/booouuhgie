@@ -3,8 +3,8 @@ render_mode unshaded;
 
 uniform sampler2D flame_shape;
 uniform vec4 color_bright: source_color = vec4(1.0, 1.0, 0.0, 1.0);
-uniform vec4 color_middle: source_color = vec4(1.0, 0.5, 0.0, 1.0);
-uniform vec4 color_dark: source_color = vec4(1.0, 0.0, 0.0, 1.0);
+uniform vec4 color_middle: source_color = vec4(1.0, 0.7, 0.0, 1.0);
+uniform vec4 color_dark: source_color = vec4(1.0, 0.2, 0.0, 1.0);
 
 
 //void vertex() {

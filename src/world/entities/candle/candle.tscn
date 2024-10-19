@@ -21,8 +21,8 @@ radius = 210.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_is2uj"]
 shader = ExtResource("2_utlij")
 shader_parameter/color_bright = Color(1, 1, 0, 1)
-shader_parameter/color_middle = Color(1, 0, 0, 1)
-shader_parameter/color_dark = Color(1, 0, 0, 1)
+shader_parameter/color_middle = Color(1, 0.7, 0, 1)
+shader_parameter/color_dark = Color(1, 0.2, 0, 1)
 shader_parameter/flame_shape = ExtResource("3_igkkr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ej6r"]

@@ -21,12 +21,10 @@ height = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(0, 15)
 texture = ExtResource("2_ryx3f")
 region_enabled = true
 region_rect = Rect2(0, 0, 60, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_2pok6")
 debug_color = Color(0.718008, 0.481119, 5.77569e-07, 0.42)
