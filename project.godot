@@ -152,6 +152,7 @@ locale/translations=PackedStringArray("res://src/assets/translations/translation
 [layer_names]
 
 2d_physics/layer_2="Light"
+2d_physics/layer_3="Lader"
 
 [physics]
 

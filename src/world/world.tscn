@@ -40,4 +40,4 @@ color = Color(0.210593, 0.135037, 3.60981e-08, 1)
 position = Vector2(1140, 900)
 
 [node name="Ghost" parent="." instance=ExtResource("3_7gepy")]
-position = Vector2(360, 900)
+position = Vector2(30, 1050)
