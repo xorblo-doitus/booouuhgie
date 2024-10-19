@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvbpgmnvrhcfm"]
+[gd_scene load_steps=4 format=3 uid="uid://dvbpgmnvrhcfm"]
 
 [ext_resource type="Script" path="res://src/world/lader/lader.gd" id="1_cjgjd"]
+[ext_resource type="Texture2D" uid="uid://ocv74eem0yoq" path="res://src/world/lader/lader.png" id="2_ryx3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pok6"]
 resource_local_to_scene = true
@@ -16,7 +17,16 @@ gravity = 0.0
 linear_damp_space_override = 3
 linear_damp = 1e+16
 script = ExtResource("1_cjgjd")
+height = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, 15)
+texture = ExtResource("2_ryx3f")
+region_enabled = true
+region_rect = Rect2(0, 0, 60, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_2pok6")
 debug_color = Color(0.718008, 0.481119, 5.77569e-07, 0.42)

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 900.0
+const SPEED = 400.0
 const DAMPING = 9000.0
 const CLIMB_VELOCITY = -600.0
 
