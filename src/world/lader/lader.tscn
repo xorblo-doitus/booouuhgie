@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvbpgmnvrhcfm"]
 
-[ext_resource type="Script" path="res://src/world/lader.gd" id="1_cjgjd"]
+[ext_resource type="Script" path="res://src/world/lader/lader.gd" id="1_cjgjd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pok6"]
 resource_local_to_scene = true
-size = Vector2(60, 60)
+size = Vector2(1, 60)
 
 [node name="Lader" type="Area2D"]
 collision_layer = 0
