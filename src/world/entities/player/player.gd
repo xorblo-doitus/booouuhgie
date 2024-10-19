@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, DAMPING * delta)
 	
-	if test_move(transform, Vector2(velocity.x * delta + 1, 0), test_push_collision, -0.5):
+	if test_move(transform, Vector2(velocity.x * delta + 1, 0), test_push_collision, 5):
 		if test_push_collision.get_collider().has_method(&"push"):
 			test_push_collision.get_collider().push(velocity.x, delta)
 	
