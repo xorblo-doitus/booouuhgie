@@ -4,6 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pok6"]
 resource_local_to_scene = true
+size = Vector2(60, 60)
 
 [node name="Lader" type="Area2D"]
 gravity_space_override = 3

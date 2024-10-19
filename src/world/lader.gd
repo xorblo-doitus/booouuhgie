@@ -6,7 +6,7 @@ extends Area2D
 @export var height: int = 5:
 	set(new):
 		height = new
-		$CollisionShape2D.shape.size.y = 20 * height
+		$CollisionShape2D.shape.size.y = 60 * height
 
 
 #func _ready() -> void:

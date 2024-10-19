@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bm0ik4csbbuyb" path="res://src/world/entities/ghost/ghost.png" id="3_ljgjj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_on067"]
+size = Vector2(60, 60)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f0yrr"]
 radius = 1.0

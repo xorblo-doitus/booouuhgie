@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const DAMPING = 3000.0
-const CLIMB_VELOCITY = -200.0
+const SPEED = 900.0
+const DAMPING = 9000.0
+const CLIMB_VELOCITY = -600.0
 
 
 var test_push_collision := KinematicCollision2D.new()
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -26,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		sprite_2d.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, DAMPING * delta)
 	

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cwf8g1x31en3s" path="res://src/world/entities/candle/candle.tscn" id="4_452w2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_icmvr"]
-size = Vector2(1386, 20)
+size = Vector2(1920, 60)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nomqr")
@@ -16,28 +16,28 @@ script = ExtResource("1_nomqr")
 position = Vector2(0, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(680, 680)
+position = Vector2(960, 1060)
 shape = SubResource("RectangleShape2D_icmvr")
 
 [node name="Lader" parent="." instance=ExtResource("3_3ei0p")]
-position = Vector2(580, 620)
+position = Vector2(1260, 840)
 height = 7
 
 [node name="Lader2" parent="." instance=ExtResource("3_3ei0p")]
-position = Vector2(280, 480)
+position = Vector2(420, 840)
 height = 7
 
 [node name="Candle" parent="." instance=ExtResource("4_452w2")]
-position = Vector2(599, 479)
+position = Vector2(1260, 720)
 
 [node name="Candle2" parent="." instance=ExtResource("4_452w2")]
-position = Vector2(140, 400)
+position = Vector2(300, 780)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.210593, 0.135037, 3.60981e-08, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_3wrrf")]
-position = Vector2(500, 680)
+position = Vector2(1140, 900)
 
 [node name="Ghost" parent="." instance=ExtResource("3_7gepy")]
-position = Vector2(260, 480)
+position = Vector2(360, 900)

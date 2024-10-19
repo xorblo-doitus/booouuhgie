@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 300.0
 
 
 var test_push_collision := KinematicCollision2D.new()
@@ -46,6 +46,7 @@ func fall(delta: float) -> void:
 		move_and_slide()
 
 
+@warning_ignore("unused_parameter")
 func track_player(delta: float) -> void:
 	var player: CharacterBody2D = get_tree().get_first_node_in_group(&"player")
 	if player == null:
