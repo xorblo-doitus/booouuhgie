@@ -54,6 +54,8 @@ func track_player(delta: float) -> void:
 	if sight.has_overlapping_bodies():
 		var player: Player = sight.get_overlapping_bodies()[0]
 		velocity = (player.global_position - global_position).normalized() * SPEED
+	else:
+		velocity = Vector2.ZERO
 	
 	sprite_2d.flip_h = velocity.x < 0
 
