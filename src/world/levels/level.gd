@@ -10,10 +10,23 @@ func _ready() -> void:
 		initial_positions[node] = node.position
 	
 	for player: Player in get_tree().get_nodes_in_group(&"player"):
+		player.killed.connect(reset.call_deferred)
 		player.killed.connect(reset)
 
 
 
 func reset() -> void:
 	for node in initial_positions:
+		if node is CharacterBody2D:
+			node.set_physics_process(false)
+			node.velocity = Vector2.ZERO
+	
+	await get_tree().physics_frame
+	for node in initial_positions:
 		node.position = initial_positions[node]
+	await get_tree().physics_frame
+	
+	for node in initial_positions:
+		if node is CharacterBody2D:
+			node.velocity = Vector2.ZERO
+			node.set_physics_process.call_deferred(true)
