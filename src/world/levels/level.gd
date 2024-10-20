@@ -10,7 +10,6 @@ func _ready() -> void:
 		initial_positions[node] = node.position
 	
 	for player: Player in get_tree().get_nodes_in_group(&"player"):
-		player.killed.connect(reset.call_deferred)
 		player.killed.connect(reset)
 
 
