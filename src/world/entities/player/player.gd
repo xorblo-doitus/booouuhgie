@@ -44,6 +44,7 @@ func _physics_process(delta: float) -> void:
 	if test_move(transform, Vector2(velocity.x * delta + 1, 0), test_push_collision, 5):
 		if test_push_collision.get_collider().has_method(&"push"):
 			test_push_collision.get_collider().push(velocity.x, delta)
+			velocity.x = clamp(velocity.x, SPEED/2.0, SPEED/2.0)
 	
 	move_and_slide()
 
