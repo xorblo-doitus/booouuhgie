@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://b7p3dtvhf4qo2"]
+[gd_scene load_steps=7 format=4 uid="uid://b7p3dtvhf4qo2"]
 
 [ext_resource type="PackedScene" uid="uid://q2yv1d7k4k5i" path="res://src/world/levels/base_level.tscn" id="1_munhu"]
 [ext_resource type="PackedScene" uid="uid://cwf8g1x31en3s" path="res://src/world/entities/candle/candle.tscn" id="2_sjsan"]
 [ext_resource type="PackedScene" uid="uid://dqlwbg7v4d1cb" path="res://src/world/entities/ghost/ghost.tscn" id="3_708n0"]
 [ext_resource type="PackedScene" uid="uid://dvbpgmnvrhcfm" path="res://src/world/lader/lader.tscn" id="4_wj8mf"]
 [ext_resource type="PackedScene" uid="uid://c2w7uxj357dmw" path="res://src/world/entities/player/Player.tscn" id="5_pxuls"]
+[ext_resource type="PackedScene" uid="uid://bpph5jv2j5kr4" path="res://src/world/levels/door.tscn" id="6_qukgl"]
 
 [node name="Level" instance=ExtResource("1_munhu")]
 
@@ -17,16 +18,23 @@ position = Vector2(1050, 390)
 [node name="Candle3" parent="." index="2" instance=ExtResource("2_sjsan")]
 position = Vector2(270, 630)
 
-[node name="Ghost" parent="." index="4" instance=ExtResource("3_708n0")]
+[node name="Candle4" parent="." index="3" instance=ExtResource("2_sjsan")]
+position = Vector2(1830, 810)
+
+[node name="Ghost" parent="." index="5" instance=ExtResource("3_708n0")]
 position = Vector2(930, 390)
 
-[node name="Lader" parent="." index="5" instance=ExtResource("4_wj8mf")]
+[node name="Lader" parent="." index="6" instance=ExtResource("4_wj8mf")]
 position = Vector2(810, 630)
 height = 7
 
-[node name="Lader2" parent="." index="6" instance=ExtResource("4_wj8mf")]
+[node name="Lader2" parent="." index="7" instance=ExtResource("4_wj8mf")]
 position = Vector2(1170, 630)
 height = 7
 
-[node name="Player" parent="." index="7" instance=ExtResource("5_pxuls")]
+[node name="Player" parent="." index="8" instance=ExtResource("5_pxuls")]
 position = Vector2(90, 810)
+
+[node name="Door" parent="." index="9" instance=ExtResource("6_qukgl")]
+position = Vector2(1770, 810)
+target = "res://src/world/levels/level_4.tscn"
