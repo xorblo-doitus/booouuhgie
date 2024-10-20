@@ -1,7 +1,6 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://bmejb6usgdah6"]
 
 [resource]
-bus/0/send = &"New Bus 2"
 bus/1/name = &"Background"
 bus/1/solo = false
 bus/1/mute = false
@@ -12,7 +11,7 @@ bus/2/name = &"Music"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
-bus/2/volume_db = 0.0
+bus/2/volume_db = -5.04224
 bus/2/send = &"Background"
 bus/3/name = &"Ambiance SFX"
 bus/3/solo = false
