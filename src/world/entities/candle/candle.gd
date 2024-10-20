@@ -26,18 +26,22 @@ func reset() -> void:
 	point_light_2d.show()
 	point_light_2d.texture_scale = 10
 	light_collision_shape.set_deferred(&"disabled", false)
-	#light_collider.set_deferred(&"monitoring", true)
-	#light_collider.set_deferred(&"monitorable", true)
+	if _blow_tween:
+		_blow_tween.kill()
+		_blow_tween = null
 
 
+var _blow_tween: Tween
 func blow() -> void:
+	if _blow_tween:
+		return
 	flame.hide()
-	create_tween().tween_property(
+	_blow_tween = create_tween()
+	_blow_tween.tween_property(
 		point_light_2d,
 		^"texture_scale",
 		0.01,
 		0.1
-	).finished.connect(point_light_2d.hide)
+	)
+	_blow_tween.finished.connect(point_light_2d.hide)
 	light_collision_shape.set_deferred(&"disabled", true)
-	#light_collider.set_deferred(&"monitoring", false)
-	#light_collider.set_deferred(&"monitorable", false)
