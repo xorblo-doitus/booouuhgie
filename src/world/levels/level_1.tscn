@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://i0xekcbsehos"]
+[gd_scene load_steps=6 format=4 uid="uid://i0xekcbsehos"]
 
 [ext_resource type="PackedScene" uid="uid://q2yv1d7k4k5i" path="res://src/world/levels/base_level.tscn" id="0"]
 [ext_resource type="PackedScene" uid="uid://cwf8g1x31en3s" path="res://src/world/entities/candle/candle.tscn" id="1_m0baq"]
 [ext_resource type="PackedScene" uid="uid://c2w7uxj357dmw" path="res://src/world/entities/player/Player.tscn" id="2_02gh8"]
 [ext_resource type="PackedScene" uid="uid://bpph5jv2j5kr4" path="res://src/world/levels/door.tscn" id="4_8kfya"]
 [ext_resource type="PackedScene" uid="uid://dqlwbg7v4d1cb" path="res://src/world/entities/ghost/ghost.tscn" id="4_wpgfb"]
-[ext_resource type="PackedScene" uid="uid://83wxnrpynmhc" path="res://src/world/levels/level_2.tscn" id="5_c3bnk"]
 
 [node name="Level" instance=ExtResource("0")]
 
@@ -35,7 +34,7 @@ position = Vector2(1110, 330)
 
 [node name="Door" parent="." index="9" instance=ExtResource("4_8kfya")]
 position = Vector2(1770, 810)
-target = ExtResource("5_c3bnk")
+target = "res://src/world/levels/level_2.tscn"
 
 [node name="Player" parent="." index="10" instance=ExtResource("2_02gh8")]
 position = Vector2(90, 810)
