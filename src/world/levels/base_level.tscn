@@ -34,4 +34,4 @@ tile_map_data = PackedByteArray("AAAfABEAAAAAAAEAAAAeABEAAAAAAAEAAAAdABEAAAAAAAE
 tile_set = SubResource("TileSet_otldu")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.15, 0.15, 0.15, 1)
+color = Color(0.196078, 0.196078, 0.196078, 1)
