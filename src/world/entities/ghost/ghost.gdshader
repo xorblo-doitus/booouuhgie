@@ -1,10 +1,8 @@
 shader_type canvas_item;
 
-//void vertex() {
-	//if (AT_LIGHT_PASS) {
-		//COLOR = vec4(1.0);
-	//}
-//}
+void vertex() {
+	
+}
 //
 //void fragment() {
 	//
