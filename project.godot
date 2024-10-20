@@ -52,6 +52,10 @@ folder_colors={
 "res://tasks/": "blue"
 }
 
+[global_group]
+
+reset_pos=""
+
 [gui]
 
 theme/custom="res://src/assets/themes/default.tres"
@@ -157,8 +161,3 @@ locale/translations=PackedStringArray("res://src/assets/translations/translation
 [physics]
 
 2d/default_gravity=6000.0
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

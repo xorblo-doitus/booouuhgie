@@ -1,4 +1,8 @@
+class_name Player
 extends CharacterBody2D
+
+
+signal killed
 
 
 const SPEED = 400.0
@@ -12,6 +16,11 @@ var test_push_collision := KinematicCollision2D.new()
 
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed(&"respawn"):
+		killed.emit()
+		return
+	
+	
 	var on_lader: bool = get_gravity().is_equal_approx(Vector2.ZERO)
 	
 	if on_lader:

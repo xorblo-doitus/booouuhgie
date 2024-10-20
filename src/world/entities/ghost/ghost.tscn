@@ -13,7 +13,7 @@ radius = 1.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hq8np"]
 shader = ExtResource("2_qbkym")
 
-[node name="Ghost" type="CharacterBody2D"]
+[node name="Ghost" type="CharacterBody2D" groups=["reset_pos"]]
 script = ExtResource("1_2bemp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
