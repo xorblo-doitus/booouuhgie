@@ -11,6 +11,7 @@ func _ready() -> void:
 	
 	for player: Player in get_tree().get_nodes_in_group(&"player"):
 		player.killed.connect(reset)
+		move_child(player, -1)
 
 
 
