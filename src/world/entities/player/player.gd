@@ -41,10 +41,19 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, DAMPING * delta)
 	
-	if test_move(transform, Vector2(velocity.x * delta + 1, 0), test_push_collision, 5):
-		if test_push_collision.get_collider().has_method(&"push"):
-			test_push_collision.get_collider().push(velocity.x, delta)
-			velocity.x = clamp(velocity.x, SPEED/2.0, SPEED/2.0)
+	if test_move(transform, Vector2(velocity.x * delta + 1, 0), test_push_collision):
+		if test_push_collision.get_collider().is_in_group(&"pushable"):
+			velocity.x = clamp(velocity.x, SPEED/-2.0, SPEED/2.0)
+			var to_push: Array[PhysicsBody2D] = [test_push_collision.get_collider()]
+			
+			while to_push[-1].test_move(to_push[-1].transform, Vector2(velocity.x * delta + 1, 0), test_push_collision):
+				if not test_push_collision.get_collider().is_in_group(&"pushable") or to_push.size() > 10:
+					to_push.clear()
+					break
+				to_push.append(test_push_collision.get_collider())
+			
+			for pushed in to_push:
+				pushed.position.x += velocity.x * delta
 	
 	move_and_slide()
 

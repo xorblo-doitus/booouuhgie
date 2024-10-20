@@ -25,7 +25,7 @@ gradient = SubResource("Gradient_g77b8")
 width = 61
 height = 61
 
-[node name="Ghost" type="CharacterBody2D" groups=["reset_pos"]]
+[node name="Ghost" type="CharacterBody2D" groups=["pushable", "reset_pos"]]
 script = ExtResource("1_2bemp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

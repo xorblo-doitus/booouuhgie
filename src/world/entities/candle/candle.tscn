@@ -28,7 +28,7 @@ shader_parameter/flame_shape = ExtResource("3_igkkr")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ej6r"]
 size = Vector2(30, 60)
 
-[node name="Candle" type="CharacterBody2D" groups=["reset_pos"]]
+[node name="Candle" type="CharacterBody2D" groups=["pushable", "reset_pos"]]
 script = ExtResource("1_eyo4j")
 
 [node name="PointLight2D" type="PointLight2D" parent="." groups=["reset_pos"]]

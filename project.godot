@@ -55,6 +55,7 @@ folder_colors={
 [global_group]
 
 reset_pos=""
+pushable=""
 
 [gui]
 
