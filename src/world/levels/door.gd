@@ -5,15 +5,17 @@ extends Node2D
 signal travel_to(target: PackedScene)
 
 
-@export var target: PackedScene
+@export_file("*.tscn", "*.scn") var target: String
 
 
 @onready var area_2d: Area2D = $Area2D
 
 
 func _ready() -> void:
-	if target == null:
+	if target.is_empty():
 		push_warning("No target for door %s in %s" % [owner.get_path_to(self), owner.scene_file_path])
+	else:
+		ResourceLoader.load_threaded_request(target)
 	
 	area_2d.input_pickable = OS.is_debug_build()
 	
@@ -21,10 +23,10 @@ func _ready() -> void:
 
 
 func trigger() -> void:
-	if target == null:
+	if target.is_empty():
 		return
 	
-	travel_to.emit(target)
+	travel_to.emit(ResourceLoader.load_threaded_get(target))
 
 
 func _on_player_touched(_body) -> void:
