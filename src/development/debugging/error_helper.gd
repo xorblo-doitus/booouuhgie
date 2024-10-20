@@ -8,7 +8,7 @@ extends RefCounted
 ## An instance of this class is supposed to represent an occurence of an error.
 
 
-enum Level {
+enum LogLevel {
 	INFO,
 	WARNING,
 	ERROR,
@@ -19,7 +19,7 @@ var title: String = ""
 ## [b]Note:[/b] Please enter the translated text, not the translation key.
 var description: String = ""
 var godot_builtin_error: Error = FAILED
-var level: Level = Level.ERROR
+var level: LogLevel = LogLevel.ERROR
 
 
 func _init(_title: String = "", _description: String = "", _godot_builtin_error: Error = FAILED) -> void:
@@ -47,7 +47,7 @@ func set_godot_builtin_error(new: Error) -> ErrorHelper:
 
 
 ## Chainable
-func set_level(new: Level) -> ErrorHelper:
+func set_level(new: LogLevel) -> ErrorHelper:
 	level = new
 	return self
 
@@ -124,12 +124,12 @@ func print_to_console(
 	else:
 		if OS.is_debug_build() and not Engine.is_editor_hint(): # Fix output bug
 			match level:
-				Level.ERROR:
+				LogLevel.ERROR:
 					push_error(title_to_show)
-				Level.WARNING:
+				LogLevel.WARNING:
 					push_warning(title_to_show)
 		
-		if level == Level.INFO:
+		if level == LogLevel.INFO:
 			print(title_to_show)
 		else:
 			printerr(title_to_show)

@@ -8,14 +8,14 @@ extends AcceptDialog
 
 
 const DEFAULT_ICONS = {
-	ErrorHelper.Level.INFO: preload("uid://cogwqm5agcbxu"),
-	ErrorHelper.Level.WARNING: preload("uid://brttfkx8oqqm8"),
-	ErrorHelper.Level.ERROR: preload("uid://dvst3otcyqgyr"),
+	ErrorHelper.LogLevel.INFO: preload("uid://cogwqm5agcbxu"),
+	ErrorHelper.LogLevel.WARNING: preload("uid://brttfkx8oqqm8"),
+	ErrorHelper.LogLevel.ERROR: preload("uid://dvst3otcyqgyr"),
 }
 const DEFAULT_COLORS = {
-	ErrorHelper.Level.INFO: Color.DEEP_SKY_BLUE,
-	ErrorHelper.Level.WARNING: Color(1, 0.8, 0),
-	ErrorHelper.Level.ERROR: Color(0.92, 0, 0),
+	ErrorHelper.LogLevel.INFO: Color.DEEP_SKY_BLUE,
+	ErrorHelper.LogLevel.WARNING: Color(1, 0.8, 0),
+	ErrorHelper.LogLevel.ERROR: Color(0.92, 0, 0),
 }
 
 
@@ -48,8 +48,8 @@ func set_title_elements(elements: Array[String] = []) -> void:
 
 ## Change the error icon based on level.
 ## Return self.
-func set_level(level: ErrorHelper.Level) -> ErrorPopup:
-	var level_string: String = ErrorHelper.Level.keys()[level].to_lower()
+func set_level(level: ErrorHelper.LogLevel) -> ErrorPopup:
+	var level_string: String = ErrorHelper.LogLevel.keys()[level].to_lower()
 	%Icon.texture = (
 		get_theme_icon(level_string)
 		if has_theme_icon(level_string) else
