@@ -60,3 +60,8 @@ func track_player(delta: float) -> void:
 	sprite_2d.flip_h = velocity.x < 0
 
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collider := get_slide_collision(i).get_collider()
+		if collider is Player:
+			collider.kill()

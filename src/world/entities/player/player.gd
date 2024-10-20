@@ -46,3 +46,7 @@ func _physics_process(delta: float) -> void:
 			test_push_collision.get_collider().push(velocity.x, delta)
 	
 	move_and_slide()
+
+
+func kill() -> void:
+	killed.emit()
