@@ -12,6 +12,7 @@ var _falling: bool = false
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var light_detector: Area2D = $LightDetector
+@onready var sight: Area2D = $Sight
 
 
 func push(x: float, delta: float) -> void:
@@ -50,11 +51,9 @@ func fall(delta: float) -> void:
 
 @warning_ignore("unused_parameter")
 func track_player(delta: float) -> void:
-	var player: CharacterBody2D = get_tree().get_first_node_in_group(&"player")
-	if player == null:
-		return
-	
-	velocity = (player.global_position - global_position).normalized() * SPEED
+	if sight.has_overlapping_bodies():
+		var player: Player = sight.get_overlapping_bodies()[0]
+		velocity = (player.global_position - global_position).normalized() * SPEED
 	
 	sprite_2d.flip_h = velocity.x < 0
 
