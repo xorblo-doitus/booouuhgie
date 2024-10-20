@@ -46,3 +46,4 @@ target = "res://src/world/levels/deadlock_level_4.tscn"
 
 [node name="GoodDoor" parent="." index="11" instance=ExtResource("5_kpfw6")]
 position = Vector2(270, 810)
+target = "res://src/world/levels/level_5.tscn"
