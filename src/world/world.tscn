@@ -1,18 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=3 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" path="res://src/world/world.gd" id="1_nomqr"]
-[ext_resource type="Texture2D" uid="uid://bbh300yaif6gy" path="res://src/world/wallpaper.png" id="2_2sgam"]
 [ext_resource type="AudioStream" uid="uid://dq8qb8l4o6nl4" path="res://src/assets/musics/main_theme.ogg" id="3_q8pyv"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nomqr")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("2_2sgam")
-stretch_mode = 1
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_q8pyv")
