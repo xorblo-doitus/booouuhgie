@@ -24,6 +24,7 @@ func reset() -> void:
 	await get_tree().physics_frame
 	for node in initial_positions:
 		node.position = initial_positions[node]
+	get_tree().call_group(&"reset", &"reset")
 	await get_tree().physics_frame
 	
 	for node in initial_positions:

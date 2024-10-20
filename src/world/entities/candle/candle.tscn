@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwf8g1x31en3s"]
+[gd_scene load_steps=11 format=3 uid="uid://cwf8g1x31en3s"]
 
 [ext_resource type="Script" path="res://src/world/entities/candle/candle.gd" id="1_eyo4j"]
 [ext_resource type="Texture2D" uid="uid://cnvvsrxjk50nl" path="res://src/world/entities/candle/lader.png" id="2_hpufw"]
@@ -25,13 +25,16 @@ shader_parameter/color_middle = Color(1, 0.7, 0, 1)
 shader_parameter/color_dark = Color(1, 0.2, 0, 1)
 shader_parameter/flame_shape = ExtResource("3_igkkr")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yrapm"]
+radius = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ej6r"]
 size = Vector2(30, 60)
 
-[node name="Candle" type="CharacterBody2D" groups=["pushable", "reset_pos"]]
+[node name="Candle" type="CharacterBody2D" groups=["pushable", "reset", "reset_pos"]]
 script = ExtResource("1_eyo4j")
 
-[node name="PointLight2D" type="PointLight2D" parent="." groups=["reset_pos"]]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, -44)
 color = Color(1, 0.733333, 0.364706, 1)
 energy = 1.5
@@ -43,23 +46,32 @@ texture_scale = 10.0
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PointLight2D/LightCollider"]
+[node name="LightCollisionShape" type="CollisionShape2D" parent="PointLight2D/LightCollider"]
 visible = false
 shape = SubResource("CircleShape2D_7a7ye")
 
-[node name="Flame" type="ColorRect" parent="PointLight2D"]
+[node name="Flame" type="ColorRect" parent="PointLight2D" groups=["reset"]]
 material = SubResource("ShaderMaterial_is2uj")
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.519
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.519
 offset_left = -340.0
-offset_top = -340.0
+offset_top = -352.16
 offset_right = -300.0
-offset_bottom = -300.0
+offset_bottom = -312.16
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Blow" type="Area2D" parent="PointLight2D"]
+position = Vector2(0, 12)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointLight2D/Blow"]
+visible = false
+shape = SubResource("CircleShape2D_yrapm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_hpufw")
@@ -68,3 +80,5 @@ texture = ExtResource("2_hpufw")
 visible = false
 shape = SubResource("RectangleShape2D_5ej6r")
 debug_color = Color(1, 0.871682, 0.662357, 0.42)
+
+[connection signal="body_entered" from="PointLight2D/Blow" to="." method="blow" unbinds=1]
