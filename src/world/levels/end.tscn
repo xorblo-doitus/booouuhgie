@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=4 uid="uid://hvmd22fgw7et"]
+
+[ext_resource type="PackedScene" uid="uid://q2yv1d7k4k5i" path="res://src/world/levels/base_level.tscn" id="1_21n2y"]
+[ext_resource type="Texture2D" uid="uid://duq4b88thpp7c" path="res://src/world/levels/credits/godot_logosvg.svg" id="3_67hax"]
+[ext_resource type="Texture2D" uid="uid://dytr0gt3hwuma" path="res://src/world/levels/credits/wildcard.png" id="4_0a6ff"]
+[ext_resource type="PackedScene" uid="uid://c2w7uxj357dmw" path="res://src/world/entities/player/Player.tscn" id="5_kagtv"]
+[ext_resource type="Texture2D" uid="uid://ci3o0ro1803vd" path="res://src/world/levels/credits/GWJ-Full-Logo-noBG.svg" id="5_ycbgk"]
+
+[sub_resource type="Gradient" id="Gradient_mfdbq"]
+colors = PackedColorArray(0, 0.282353, 1, 1, 0, 0.67451, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_md6pe"]
+gradient = SubResource("Gradient_mfdbq")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsarp"]
+size = Vector2(1920, 60)
+
+[sub_resource type="Gradient" id="Gradient_a2d5k"]
+colors = PackedColorArray(0.101961, 0.654902, 0.2, 1, 0, 0.462745, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xijyw"]
+gradient = SubResource("Gradient_a2d5k")
+width = 60
+height = 60
+fill_to = Vector2(0, 1)
+
+[node name="Level" instance=ExtResource("1_21n2y")]
+
+[node name="TextureRect" parent="." index="0"]
+texture = SubResource("GradientTexture2D_md6pe")
+stretch_mode = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
+position = Vector2(1050, 1050)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_hsarp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+position = Vector2(1050, 1050)
+scale = Vector2(30, 1)
+texture = SubResource("GradientTexture2D_xijyw")
+
+[node name="Ground" parent="." index="3"]
+tile_map_data = PackedByteArray("AAACABEAAAAAAAAAAAABABEAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA4AAAAAAAEAAAAAAA0AAAAAAAEAAAAAAAwAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAgAAAAAAAEAAAAAAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAUAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAEAAAD//xAAAAAAAAEAAAD//w8AAAAAAAAAAAAgABAAAAAAAAEAAAAgAA8AAAAAAAAAAAAAAP//AAAAAAAAAAA=")
+
+[node name="CanvasModulate" parent="." index="4"]
+visible = false
+
+[node name="Player" parent="." index="5" instance=ExtResource("5_kagtv")]
+position = Vector2(30, 990)
+
+[node name="GG" type="Label" parent="." index="6"]
+offset_left = 570.0
+offset_top = 30.0
+offset_right = 1346.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 50
+text = "You escaped from the mansion!"
+
+[node name="GodotLogosvg" type="Sprite2D" parent="." index="7"]
+position = Vector2(1350, 630)
+texture = ExtResource("3_67hax")
+
+[node name="Wildcard" type="Sprite2D" parent="." index="8"]
+position = Vector2(660, 564.564)
+rotation = 0.350323
+scale = Vector2(0.9, 1)
+texture = ExtResource("4_0a6ff")
+
+[node name="Gwj-full-logo-noBg" type="Sprite2D" parent="." index="9"]
+position = Vector2(360, 624.564)
+texture = ExtResource("5_ycbgk")
+
+[node name="MadeFor" type="Label" parent="." index="10"]
+offset_left = 330.0
+offset_top = 330.0
+offset_right = 548.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 50
+text = "Made for"
+
+[node name="With" type="Label" parent="." index="11"]
+offset_left = 1230.0
+offset_top = 330.0
+offset_right = 1484.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 50
+text = "Made with"

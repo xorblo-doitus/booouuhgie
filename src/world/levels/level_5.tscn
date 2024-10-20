@@ -46,7 +46,7 @@ position = Vector2(270, 810)
 
 [node name="Door" parent="." index="10" instance=ExtResource("5_m7ipc")]
 position = Vector2(1770, 810)
-target = "res://src/world/levels/deadlock_level_4.tscn"
+target = "res://src/world/levels/end.tscn"
 
 [node name="Ghost" parent="." index="11" instance=ExtResource("6_ladpb")]
 position = Vector2(1650, 810)
