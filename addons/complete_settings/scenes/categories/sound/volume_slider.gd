@@ -27,7 +27,7 @@ var _path: String:
 			var info: Dictionary = property_info.duplicate()
 			info["name"] = _path
 			if not ProjectSettings.has_setting(_path):
-				EasySettings.set_setting(_path, 100)
+				EasySettings.set_setting(_path, bus.get_volume_linear() * 100)
 				ProjectSettings.add_property_info(info)
 		if esl:
 			esl.setting = _path
@@ -42,5 +42,10 @@ func _ready() -> void:
 	esl.force_update()
 	super()
 
-func _on_slider_spin_box_value_changed(value) -> void:
-	bus.set_volume_linear(value)
+
+func _on_slider_spin_box_value_changed(value: float) -> void:
+	bus.set_volume_linear(value/100)
+
+
+func _on_esl_slider_spin_box_value_updated(new_value: Variant, old_value: Variant) -> void:
+	bus.set_volume_linear(new_value/100)

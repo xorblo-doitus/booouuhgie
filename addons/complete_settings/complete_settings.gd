@@ -34,8 +34,8 @@ static func load_volumes():
 			linear_to_db(
 				EasySettings.get_setting(
 					VolumeSlider.setting_path_prefix + AudioServer.get_bus_name(bus_idx),
-					0.0
-				)
+					db_to_linear(AudioServer.get_bus_volume_db(bus_idx)) * 100
+				) / 100.0
 			)
 		)
 
@@ -69,4 +69,3 @@ static func apply() -> void:
 static func validate() -> void:
 	EasySettings.validate_bulk_setting_change()
 	KeybindsSaver.shared.validate_bulk_remap()
-
