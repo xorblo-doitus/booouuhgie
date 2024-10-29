@@ -5,6 +5,9 @@ extends Node2D
 const LEVEL_1 = preload("res://src/world/levels/level_1.tscn")
 
 @onready var level_change: AudioStreamPlayer2D = $LevelChange
+@onready var ui: CanvasLayer = $UI
+@onready var settings: PanelContainer = $UI/UI/MarginContainer/Control/Settings
+
 
 func _ready():
 	change_level(LEVEL_1)
@@ -26,3 +29,5 @@ func change_level(scene: PackedScene, origin: Door = null) -> void:
 	
 	for door: Door in get_tree().get_nodes_in_group(&"door"):
 		door.travel_to.connect(change_level.bind(door))
+	
+	move_child(ui, -1)
