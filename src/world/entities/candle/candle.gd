@@ -34,9 +34,10 @@ func reset() -> void:
 
 var _blow_tween: Tween
 func blow() -> void:
-	woosh.play()
 	if _blow_tween:
 		return
+	
+	woosh.play()
 	flame.hide()
 	_blow_tween = create_tween()
 	_blow_tween.tween_property(
