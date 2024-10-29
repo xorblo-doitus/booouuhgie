@@ -29,6 +29,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 theme = ExtResource("4_pw2d0")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/UI"]
@@ -38,9 +39,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="UI/UI/MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Settings" parent="UI/UI/MarginContainer/Control" instance=ExtResource("4_vjdn8")]
 visible = false
