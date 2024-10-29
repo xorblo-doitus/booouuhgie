@@ -7,13 +7,19 @@ const LEVEL_1 = preload("res://src/world/levels/level_1.tscn")
 @onready var level_change: AudioStreamPlayer2D = $LevelChange
 @onready var ui: CanvasLayer = $UI
 @onready var settings: PanelContainer = $UI/UI/MarginContainer/Control/Settings
+@onready var music: AudioStreamPlayer = $Music
 
 
 func _ready():
 	change_level(LEVEL_1)
 
 
+var on_first_music: bool = true
 func change_level(scene: PackedScene, origin: Door = null) -> void:
+	if on_first_music and scene.resource_path.ends_with("/level_4.tscn"):
+		on_first_music = false
+		music.get_stream_playback().switch_to_clip_by_name(&"transition")
+	
 	if origin:
 		level_change.global_position = origin.global_position
 		level_change.play()

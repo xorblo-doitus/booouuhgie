@@ -1,18 +1,53 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=10 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" path="res://src/world/world.gd" id="1_nomqr"]
+[ext_resource type="AudioStream" uid="uid://cx8a31afnqq7y" path="res://src/assets/musics/transition.ogg" id="3_gr3ry"]
 [ext_resource type="AudioStream" uid="uid://dq8qb8l4o6nl4" path="res://src/assets/musics/main_theme.ogg" id="3_q8pyv"]
 [ext_resource type="AudioStream" uid="uid://g06vcjx8vi3t" path="res://src/world/levels/door.wav" id="3_yc6yr"]
+[ext_resource type="AudioStream" uid="uid://b7os47nornygy" path="res://src/assets/musics/stressed.ogg" id="4_f446h"]
 [ext_resource type="Theme" uid="uid://d4dmxjv5l13r7" path="res://addons/complete_settings/scenes/settings/example_theme.tres" id="4_pw2d0"]
 [ext_resource type="PackedScene" uid="uid://gocrldq4i1bl" path="res://addons/complete_settings/scenes/settings/example.tscn" id="4_vjdn8"]
 [ext_resource type="Texture2D" uid="uid://bl8b5mupe42sl" path="res://addons/easy_settings/utilities/gear.svg" id="6_5423j"]
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_1dids"]
+clip_count = 3
+clip_0/name = &"main_theme"
+clip_0/stream = ExtResource("3_q8pyv")
+clip_0/auto_advance = 0
+clip_1/name = &"transition"
+clip_1/stream = ExtResource("3_gr3ry")
+clip_1/auto_advance = 1
+clip_1/next_clip = 2
+clip_2/name = &"stressed"
+clip_2/stream = ExtResource("4_f446h")
+clip_2/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+},
+Vector2i(0, 1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+},
+Vector2i(1, 2): {
+"fade_beats": 0,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+}
+}
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_nomqr")
 
-[node name="MainTheme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_q8pyv")
-volume_db = -5.0
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamInteractive_1dids")
+volume_db = -15.0
 autoplay = true
 bus = &"Music"
 
