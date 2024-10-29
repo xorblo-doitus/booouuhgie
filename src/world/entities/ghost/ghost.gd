@@ -13,6 +13,7 @@ var _falling: bool = false
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var light_detector: Area2D = $LightDetector
 @onready var sight: Area2D = $Sight
+@onready var boo: AudioStreamPlayer2D = $Boo
 
 
 
@@ -52,3 +53,4 @@ func track_player(delta: float) -> void:
 		var collider := get_slide_collision(i).get_collider()
 		if collider is Player:
 			collider.kill()
+			boo.play()

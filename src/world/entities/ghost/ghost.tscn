@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqlwbg7v4d1cb"]
+[gd_scene load_steps=11 format=3 uid="uid://dqlwbg7v4d1cb"]
 
 [ext_resource type="Script" path="res://src/world/entities/ghost/ghost.gd" id="1_2bemp"]
 [ext_resource type="Shader" path="res://src/world/entities/ghost/ghost.gdshader" id="2_qbkym"]
 [ext_resource type="Texture2D" uid="uid://bm0ik4csbbuyb" path="res://src/world/entities/ghost/ghost.png" id="3_ljgjj"]
+[ext_resource type="AudioStream" uid="uid://bxjd0kqutes1v" path="res://src/world/entities/ghost/boo.wav" id="4_f3vbo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_on067"]
 size = Vector2(60, 60)
@@ -57,3 +58,6 @@ debug_color = Color(1, 1, 1, 0.0705882)
 energy = 5.0
 range_item_cull_mask = 2
 texture = SubResource("GradientTexture2D_mleom")
+
+[node name="Boo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_f3vbo")
