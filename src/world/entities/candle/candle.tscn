@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwf8g1x31en3s"]
+[gd_scene load_steps=12 format=3 uid="uid://cwf8g1x31en3s"]
 
 [ext_resource type="Script" path="res://src/world/entities/candle/candle.gd" id="1_eyo4j"]
+[ext_resource type="AudioStream" uid="uid://bufnn1a16vil1" path="res://src/world/entities/candle/woosh.wav" id="2_4j1d3"]
 [ext_resource type="Texture2D" uid="uid://cnvvsrxjk50nl" path="res://src/world/entities/candle/lader.png" id="2_hpufw"]
 [ext_resource type="Shader" path="res://src/world/entities/candle/flame.gdshader" id="2_utlij"]
 [ext_resource type="Texture2D" uid="uid://42g5ggb143p2" path="res://src/world/entities/candle/flame.png" id="3_igkkr"]
@@ -41,6 +42,12 @@ energy = 1.5
 blend_mode = 2
 texture = SubResource("GradientTexture2D_hj0kj")
 texture_scale = 10.0
+
+[node name="Woosh" type="AudioStreamPlayer2D" parent="PointLight2D"]
+position = Vector2(0, 44)
+stream = ExtResource("2_4j1d3")
+volume_db = 5.0
+bus = &"SFX"
 
 [node name="LightCollider" type="Area2D" parent="PointLight2D"]
 collision_layer = 2

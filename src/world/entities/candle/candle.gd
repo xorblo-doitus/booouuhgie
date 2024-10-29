@@ -8,6 +8,7 @@ var test_push_collision := KinematicCollision2D.new()
 @onready var light_collider: Area2D = $PointLight2D/LightCollider
 @onready var flame: ColorRect = $PointLight2D/Flame
 @onready var light_collision_shape: CollisionShape2D = $PointLight2D/LightCollider/LightCollisionShape
+@onready var woosh: AudioStreamPlayer2D = $PointLight2D/Woosh
 
 
 
@@ -33,6 +34,7 @@ func reset() -> void:
 
 var _blow_tween: Tween
 func blow() -> void:
+	woosh.play()
 	if _blow_tween:
 		return
 	flame.hide()
